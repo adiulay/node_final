@@ -21,42 +21,42 @@ app.use(bodyParser.urlencoded({
 app.set('views', __dirname + '/views');
 app.set('view engine', 'hbs');
 
-// app.get('/', (request, response) => {
-//     response.render('gallery.hbs', {
-//         title: 'Gallery',
-//         output: 'http://t0.gstatic.com/images?q=tbn:ANd9GcQ9u48pu-6IB2FnnYl_H-15le_g8Dkt5d5RN-VWiWIl_-dyJdaa'
-//     })
-// });
-
-// app.get('/gallery', async (request, response) => {
-//     response.render('gallery.hbs', {
-//         title: 'Gallery',
-//         output: ''
-//     })
-// });
-
-// app.post('/getpicture', async (request, response) => {
-//     var nasa = request.body.nasa;
-//     var gallery_list = await gallery.search(nasa);
-//
-//     if (gallery_list.length === 0 || gallery_list === 'Cannot find picture') {
-//         error_dictionary = {
-//             title: 'Gallery',
-//             output_error: 'No pictures found'
-//         };
-//         response.render('gallery.hbs', error_dictionary)
-//     } else {
-//         response.render('gallery.hbs', {
-//             title: 'Gallery',
-//             output: gallery_list[_.random(0, gallery_list.length)],
-//             output1: gallery_list[_.random(0, gallery_list.length)],
-//             output2: gallery_list[_.random(0, gallery_list.length)],
-//             output3: gallery_list[_.random(0, gallery_list.length)]
-//         })
-//     }
-// });
-
 app.get('/', (request, response) => {
+    response.render('gallery.hbs', {
+        title: 'Gallery',
+        output: 'http://t0.gstatic.com/images?q=tbn:ANd9GcQ9u48pu-6IB2FnnYl_H-15le_g8Dkt5d5RN-VWiWIl_-dyJdaa'
+    })
+});
+
+app.get('/gallery', async (request, response) => {
+    response.render('gallery.hbs', {
+        title: 'Gallery',
+        output: ''
+    })
+});
+
+app.post('/getpicture', async (request, response) => {
+    var nasa = request.body.nasa;
+    var gallery_list = await gallery.search(nasa);
+
+    if (gallery_list.length === 0 || gallery_list === 'Cannot find picture') {
+        error_dictionary = {
+            title: 'Gallery',
+            output_error: 'No pictures found'
+        };
+        response.render('gallery.hbs', error_dictionary)
+    } else {
+        response.render('gallery.hbs', {
+            title: 'Gallery',
+            output: gallery_list[_.random(0, gallery_list.length)],
+            output1: gallery_list[_.random(0, gallery_list.length)],
+            output2: gallery_list[_.random(0, gallery_list.length)],
+            output3: gallery_list[_.random(0, gallery_list.length)]
+        })
+    }
+});
+
+app.get('/cardgame', (request, response) => {
     response.render('deck.hbs', {
         title: 'DRAW YUGIOH',
         output: 'hello'
