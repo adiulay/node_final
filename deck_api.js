@@ -17,4 +17,4 @@ var drawCard = async (number_of_cards) => {
 
 module.exports = {
     drawCard: drawCard
-}
+};
