@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="./CSS/nav_bar.css">
+</head>
+<body>
+    <h1>My Gallery</h1>
+
+    <form method="post" action="/getpicture">
+        <label><b>Search Nasa Pictures: </b></label>
+        <label>
+            <input type="text" placeholder="Search Pictures" name="nasa">
+            <input type="submit" value="Submit">
+        </label>
+    </form>
+
+    <div>
+        <img src="{{output}}" alt="nasa_logo">
+        <img src="{{output1}}" alt="pictureone">
+        <img src="{{output2}}" alt="picturetwo">
+        <img src="{{output3}}" alt="picturethree">
+        <b>{{output_error}}</b>
+    </div>
+
+</body>
+</html>

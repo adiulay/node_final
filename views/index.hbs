@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Network</title>
+    <link rel="stylesheet" href="./CSS/nav_bar.css">
 </head>
 <body>
+
+    {{>nav_bar}}
+
     <h1>Today's Weather</h1>
     <form method="post" action="/getweather">
         <label><b>Insert City Here</b></label>
