@@ -29,11 +29,10 @@ app.get('/', (request, response) => {
 app.post('/getweather', async (request, response) => {
     var city = request.body.city;
     // console.log(city);
-    var weather_description = await weather.getWeather(city);
-    // console.log(weather);
-    response.render('weather_output.hbs', {
-        Title: city, //im a city boy,
-        weather_output: weather_description
+    // var weather_description = await weather.getWeather(city);
+    var weather_description = await weather.getCoordinates(city);
+    response.render('index.hbs', {
+        output: weather_description
     })
 });
 
