@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="./CSS/nav_bar.css">
+</head>
+<body>
+<h1>Card Game</h1>
+
+<!--{{>nav_bar}}-->
+
+<form method="post" action="/drawcard">
+    <label><b>Draw number of cards: </b></label>
+    <label>
+        <input type="number" placeholder="Pick a number to draw upon" name="card_drawn" required min="0">
+        <input type="submit" value="Submit">
+    </label>
+</form>
+
+{{# each draw_card}}
+    <img src="{{this}}" alt="card">
+{{/each}}
+
+<div>
+    <b>{{output}}</b>
+    <b>{{output_error}}</b>
+</div>
+
+<button onclick="location.reload();">Refresh Page</button>
+
+</body>
+</html>
