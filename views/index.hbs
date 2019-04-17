@@ -6,13 +6,16 @@
 </head>
 <body>
     <h1>Today's Weather</h1>
-    <form>
+    <form method="post" action="/getweather">
         <label><b>Insert City Here</b></label>
         <label>
             <input type="text" placeholder="Enter City" name="city">
             <input type="submit" value="Submit">
         </label>
     </form>
+    <div>
+        <b>{{output}}</b>
+    </div>
 
 </body>
 </html>
