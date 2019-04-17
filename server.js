@@ -18,7 +18,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'hbs');
 
 app.get('/', (request, response) => {
-    response.send('hello world')
+    response.render('index.hbs')
 });
 
 app.listen(port, () => {
