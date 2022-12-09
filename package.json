@@ -20,7 +20,7 @@
   "dependencies": {
     "axios": "^0.18.1",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "hbs": "^4.0.3",
     "lodash": "^4.17.19"
   }
